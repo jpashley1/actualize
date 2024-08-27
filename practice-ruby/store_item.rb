@@ -14,3 +14,5 @@ whistlepig = { :type => "whiskey", :price => 54.99 }
 graywhale = { :type => "gin", :price => 29.99 }
 
 p titos
+p greygoose
+p hendricks
