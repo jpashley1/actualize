@@ -9,8 +9,8 @@ titos = { type: "vodka", price: 14.99 }
 red_breast = { type: "whiskey", price: 74.99 }
 hendricks = { type: "gin", price: 32.00 }
 
-greygoose = { :type => "vodka", price => 28.99 }
-whistlepig = { :type => "whiskey", price => 54.99 }
-graywhale = { :type => "gin", price => 29.99 }
+greygoose = { :type => "vodka", :price => 28.99 }
+whistlepig = { :type => "whiskey", :price => 54.99 }
+graywhale = { :type => "gin", :price => 29.99 }
 
 p titos
