@@ -26,19 +26,26 @@ class Store_items
   attr_reader :type, :price
   attr_writer :price
 
-  def initialize(type, price)
+  def initialize(type, price, number_of_cases)
     @type = type
     @price = price
+    @stock = number_of_cases
+  end
+
+  def print_info
+    puts @type, @price, @stock
   end
 end
 
-titos = Store_items.new("vodka", 28.99)
-red_breast = Store_items.new("whiskey", 74.99)
-hendricks = Store_items.new("gin", 32.00)
+titos = Store_items.new("vodka", 28.99, 6)
+red_breast = Store_items.new("whiskey", 74.99, 2)
+hendricks = Store_items.new("gin", 32.00, 4)
 
-pp titos
-pp red_breast
-pp hendricks
+# pp titos
+# pp red_breast
+# pp hendricks
 
-titos.price = 30.00
-pp titos
+# titos.price = 30.00
+# pp titos
+
+puts titos.print_info
