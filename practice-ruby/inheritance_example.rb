@@ -25,7 +25,14 @@ class Bike < Car
   def ring_bell
     puts "Ring ring!"
   end
+
+  def honk_horn
+    puts "this bike doesn't have a horn!"
+  end
 end
 
 honda = Car.new(55, "north")
 p honda
+trek = Bike.new(21, "south")
+trek.ring_bell
+trek.honk_horn
