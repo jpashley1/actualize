@@ -23,10 +23,12 @@ end
 
 employee1 = Employee.new({ first_name: "Majora", last_name: "Carter", salary: 80000, active: true })
 employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 70000, active: true)
-employee1.print_info
-employee2.print_info
+# employee1.print_info
+# employee2.print_info
 
 class Manager < Employee
+  attr_writer :employees
+
   def initialize(input_options)
     super
     @employees = input_options[:employees]
@@ -40,13 +42,29 @@ class Manager < Employee
 
   def give_all_raises
     # loops through each of the manager’s employees and gives them a raise (using the give_annual_raise method
+    # p "hello"
+    index = 0
+    while index < employees.length
+      employees[index].give_annual_raise
+      index += 1
+    end
+  end
+
+  def fire_all_employees
     index = 0
     while index < @employees.length
-      @employees[index].give_annual_raise
+      if @employees[index][:active] == true
+        @employees[index][:active] = false
+      end
     end
   end
 end
 
-# manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
+# p employee1
+# p employee2
+manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
 # manager.print_info
 # manager.send_report
+manager.give_all_raises
+manager.print_info
+# manager.fire_all_employees
