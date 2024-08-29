@@ -8,12 +8,13 @@ trucks = response.parse
 # get user input
 # compare user input to county
 # if they are the same, show that market
-puts "enter day:"
+puts "What Day would you like to eat in the street?:"
 user_input = gets.chomp
 
 trucks.each do |trucks|
   if trucks["dayofweekstr"] == user_input
     p trucks["applicant"]
+    p trucks["optionaltext"]
     p "Hours: #{trucks["starttime"]} - #{trucks["endtime"]} at #{trucks["location"]}"
     p "*****************"
   end
